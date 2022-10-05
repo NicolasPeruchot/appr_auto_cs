@@ -1,6 +1,8 @@
 """Manage dependencies."""
 import pathlib
+
 from typing import List
+
 from setuptools import find_packages, setup
 
 
@@ -17,7 +19,6 @@ dev_packages = [
     "ipykernel",
     "isort",
     "pre-commit",
-    "mkdocs",
 ]
 
 
