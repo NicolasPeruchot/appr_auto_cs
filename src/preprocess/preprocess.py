@@ -1,3 +1,4 @@
+
 def drop_useless(data):
     data = data.drop(
         [
