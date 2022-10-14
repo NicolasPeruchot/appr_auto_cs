@@ -999,7 +999,6 @@ f,NeukÃ¶lln,NeukÃ¶lln,52.47308000000001,13.426320000000002,Apartment,Entire 
 t,Karlshorst,Lichtenberg,52.49061,13.52685,Apartment,Entire home/apt,2,1.0,1.0,2.0,1,4,137,95.0,10.0,8.0,10.0,10.0,9.0,9.0,f,f,70.0
 t,Pankow,Pankow,52.560080000000006,13.39029,Apartment,Entire home/apt,6,1.0,3.0,6.0,1,4,29,96.0,10.0,9.0,10.0,10.0,9.0,10.0,f,f,107.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.47028000000001,13.450379999999996,Apartment,Entire home/apt,4,1.0,2.0,2.0,1,5,1,100.0,10.0,8.0,10.0,10.0,10.0,8.0,f,f,100.0
-t,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48629000000001,13.36973,Apartment,Entire home/apt,8,1.5,3.0,,6,3,192,96.0,10.0,10.0,10.0,10.0,9.0,9.0,t,f,152.0
 f,Pankow,Pankow,52.56344,13.40966,Loft,Entire home/apt,3,2.0,1.0,1.0,2,3,1,80.0,10.0,6.0,10.0,10.0,10.0,8.0,f,f,30.0
 f,WeiÃensee,Pankow,52.55194,13.44421,Apartment,Private room,1,1.0,1.0,1.0,1,1,2,100.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,30.0
 f,Prenzlauer Berg,Pankow,52.54496999999999,13.415770000000002,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,15,2,100.0,10.0,9.0,10.0,10.0,10.0,10.0,f,f,53.0
@@ -1261,7 +1260,6 @@ f,Prenzlauer Berg,Pankow,52.53216,13.439770000000005,Apartment,Entire home/apt,2
 f,Mitte,Mitte,52.51625,13.39185,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,4,1,100.0,10.0,8.0,10.0,10.0,8.0,10.0,f,f,45.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.46824,13.426220000000002,Apartment,Entire home/apt,4,1.0,1.0,1.0,2,5,114,96.0,10.0,9.0,10.0,10.0,10.0,9.0,f,f,56.0
 t,Friedrichshain,Friedrichshain-Kreuzberg,52.51669000000001,13.44774,Apartment,Entire home/apt,3,1.0,2.0,2.0,2,2,13,95.0,9.0,10.0,9.0,10.0,10.0,10.0,f,f,80.0
-f,Wedding,Mitte,52.552519999999994,13.3458,Guest suite,Entire home/apt,7,1.5,,6.0,,2,5,96.0,10.0,9.0,10.0,10.0,9.0,10.0,f,f,65.0
 f,Prenzlauer Berg,Pankow,52.55419000000001,13.424329999999998,Apartment,Entire home/apt,2,1.0,1.0,1.0,2,3,3,100.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,70.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.48355,13.44134,Apartment,Private room,2,1.0,2.0,2.0,1,2,5,100.0,9.0,9.0,10.0,10.0,10.0,10.0,f,f,40.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.46845,13.431329999999996,Apartment,Entire home/apt,4,1.0,3.0,3.0,2,2,48,94.0,10.0,9.0,10.0,10.0,9.0,9.0,f,f,50.0
@@ -1301,7 +1299,6 @@ f,Prenzlauer Berg,Pankow,52.53858,13.42225,Apartment,Entire home/apt,2,1.0,1.0,1
 f,Moabit,Mitte,52.52713000000001,13.32996,Apartment,Entire home/apt,4,1.0,1.0,2.0,2,2,6,100.0,10.0,8.0,10.0,10.0,10.0,9.0,t,f,46.0
 t,NeukÃ¶lln,NeukÃ¶lln,52.47727,13.42419,Apartment,Entire home/apt,4,1.0,1.0,2.0,2,2,124,98.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,70.0
 f,Prenzlauer Berg,Pankow,52.53736999999999,13.41917,Condominium,Private room,2,1.0,1.0,2.0,1,3,18,93.0,9.0,10.0,10.0,10.0,10.0,9.0,f,f,40.0
-f,NeukÃ¶lln,NeukÃ¶lln,52.47221999999999,13.42303,Apartment,Entire home/apt,10,1.0,0.0,,4,1,60,95.0,10.0,9.0,10.0,10.0,10.0,10.0,t,f,109.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.47684,13.4297,Apartment,Private room,2,1.0,1.0,1.0,1,2,4,93.0,10.0,9.0,10.0,10.0,9.0,10.0,f,f,32.0
 f,Moabit,Mitte,52.53199,13.3287,Condominium,Private room,1,1.0,1.0,1.0,1,5,3,100.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,26.0
 f,Prenzlauer Berg,Pankow,52.54366,13.41242,Apartment,Private room,2,0.5,1.0,1.0,2,1,11,87.0,10.0,9.0,9.0,9.0,9.0,9.0,f,f,35.0
@@ -1505,7 +1502,6 @@ f,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48359000000001,13.3555,Apartment,Pr
 t,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48242,13.35274,Apartment,Private room,1,1.0,1.0,1.0,1,7,11,96.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,50.0
 f,Prenzlauer Berg,Pankow,52.55383000000001,13.40471,Apartment,Private room,3,1.0,1.0,1.0,1,2,28,85.0,9.0,8.0,8.0,9.0,9.0,9.0,f,f,32.0
 f,Mitte,Mitte,52.52662,13.41223,Apartment,Entire home/apt,4,1.0,1.0,2.0,2,3,4,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,59.0
-t,Wannsee,Steglitz - Zehlendorf,52.42946,13.15309,House,Entire home/apt,,,,,8,1,19,96.0,10.0,9.0,10.0,10.0,9.0,9.0,t,f,385.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49681,13.38535,Apartment,Entire home/apt,4,1.0,2.0,4.0,1,1,152,91.0,9.0,9.0,10.0,10.0,10.0,9.0,f,f,69.0
 f,Prenzlauer Berg,Pankow,52.55311999999999,13.40467,Apartment,Private room,3,1.0,1.0,1.0,2,2,2,95.0,10.0,10.0,8.0,9.0,10.0,10.0,f,f,30.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.48112,13.42034,Apartment,Private room,2,1.0,1.0,1.0,1,1,3,100.0,10.0,10.0,10.0,9.0,10.0,10.0,f,f,21.0
@@ -1825,7 +1821,6 @@ f,Prenzlauer Berg,Pankow,52.54415,13.410520000000002,Apartment,Entire home/apt,2
 f,NeukÃ¶lln,NeukÃ¶lln,52.48356,13.4272,Apartment,Entire home/apt,2,1.5,1.0,1.0,1,2,1,60.0,10.0,4.0,6.0,10.0,8.0,6.0,f,f,65.0
 t,NeukÃ¶lln,NeukÃ¶lln,52.47576,13.42159,Apartment,Private room,2,1.0,1.0,1.0,1,2,15,96.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,32.0
 f,Prenzlauer Berg,Pankow,52.55286,13.41514,Apartment,Entire home/apt,2,1.0,1.0,1.0,2,4,1,80.0,8.0,8.0,10.0,10.0,8.0,8.0,f,f,79.0
-f,Moabit,Mitte,52.52975,13.3473,Condominium,Entire home/apt,,,,10.0,,2,93,96.0,10.0,10.0,10.0,9.0,9.0,9.0,t,f,65.0
 f,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48744,13.35237,Apartment,Entire home/apt,4,1.0,1.0,1.0,1,2,11,88.0,9.0,8.0,10.0,10.0,10.0,9.0,t,f,60.0
 t,Moabit,Mitte,52.52691,13.33825,House,Entire home/apt,2,1.0,0.0,2.0,2,60,45,97.0,10.0,10.0,10.0,10.0,9.0,10.0,f,f,60.0
 f,Prenzlauer Berg,Pankow,52.53017,13.4439,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,2,11,95.0,10.0,9.0,10.0,10.0,9.0,9.0,f,f,52.0
@@ -3908,7 +3903,6 @@ f,Wilmersdorf,Charlottenburg-Wilm.,52.46971,13.29168,Apartment,Private room,2,1.
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.4969,13.4288,Loft,Entire home/apt,4,1.0,2.0,2.0,4,3,109,92.0,9.0,9.0,9.0,10.0,10.0,9.0,t,f,100.0
 f,Steglitz,Steglitz - Zehlendorf,52.44346999999999,13.35826,Apartment,Entire home/apt,7,1.0,3.0,5.0,4,1,15,89.0,10.0,9.0,9.0,9.0,8.0,9.0,f,f,75.0
 t,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48692,13.35665,Apartment,Entire home/apt,4,1.0,2.0,1.0,2,3,62,99.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,69.0
-f,Friedrichshain,Friedrichshain-Kreuzberg,52.51901,13.45408,Apartment,Private room,2,,1.0,1.0,1,1,6,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,70.0
 f,Prenzlauer Berg,Pankow,52.53008000000001,13.44386,Apartment,Entire home/apt,5,1.0,1.0,4.0,2,2,236,78.0,8.0,9.0,9.0,8.0,9.0,8.0,f,f,70.0
 t,Kreuzberg,Friedrichshain-Kreuzberg,52.49493,13.43015,Apartment,Private room,2,1.0,1.0,1.0,1,2,92,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,65.0
 f,Wedding,Mitte,52.54758000000001,13.36014,Apartment,Private room,1,1.0,1.0,1.0,1,10,2,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,30.0
@@ -4855,7 +4849,6 @@ f,NeukÃ¶lln,NeukÃ¶lln,52.48674000000001,13.442,Loft,Shared room,2,1.5,1.0,1.
 f,NeukÃ¶lln,NeukÃ¶lln,52.4776,13.4328,Apartment,Private room,1,1.0,1.0,1.0,1,21,3,93.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,18.0
 f,Friedrichshain,Friedrichshain-Kreuzberg,52.51045,13.46212,Apartment,Private room,4,1.0,1.0,2.0,2,2,2,80.0,10.0,6.0,10.0,10.0,10.0,10.0,f,f,35.0
 t,Moabit,Mitte,52.5337,13.34609,Apartment,Private room,2,1.0,1.0,1.0,1,2,30,98.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,114.0
-t,Steglitz,Steglitz - Zehlendorf,52.45705999999999,13.335779999999998,House,Entire home/apt,16,2.0,4.0,,1,7,18,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,380.0
 f,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.49333000000001,13.36229,Apartment,Entire home/apt,3,1.0,2.0,3.0,1,7,13,96.0,9.0,10.0,10.0,10.0,9.0,9.0,f,f,105.0
 f,Potsdamer Platz,Mitte,52.51294,13.37615,Apartment,Private room,2,1.0,1.0,1.0,1,2,2,80.0,9.0,6.0,10.0,8.0,8.0,8.0,t,f,55.0
 f,Wedding,Mitte,52.53041999999999,13.35132,Apartment,Private room,2,1.0,1.0,2.0,1,60,8,94.0,10.0,9.0,10.0,10.0,9.0,9.0,f,f,29.0
@@ -5569,7 +5562,6 @@ t,Friedrichshain,Friedrichshain-Kreuzberg,52.49729,13.46925,Apartment,Private ro
 f,Prenzlauer Berg,Pankow,52.54155,13.41909,Apartment,Private room,4,1.0,2.0,3.0,2,1,28,97.0,10.0,10.0,10.0,10.0,10.0,9.0,f,f,65.0
 f,Mitte,Mitte,52.51239,13.41515,Apartment,Private room,2,1.5,1.0,1.0,1,1,54,95.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,59.0
 f,Alt-Treptow,Treptow - KÃ¶penick,52.48891,13.453729999999998,Apartment,Private room,4,1.0,1.0,1.0,3,2,7,100.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,30.0
-f,NiederschÃ¶nhausen,Pankow,52.57357,13.38294,Apartment,Entire home/apt,,3.0,5.0,,8,4,7,85.0,9.0,9.0,10.0,10.0,9.0,9.0,t,f,230.0
 t,Friedrichsfelde,Lichtenberg,52.51071,13.5138,Apartment,Private room,2,1.0,1.0,1.0,1,1,16,96.0,10.0,9.0,10.0,10.0,9.0,9.0,t,f,25.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.49174,13.42901,Apartment,Entire home/apt,4,1.0,1.0,1.0,2,3,95,98.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,66.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.48214,13.43123,Apartment,Private room,2,1.0,1.0,1.0,1,1,9,100.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,25.0
@@ -5682,7 +5674,6 @@ f,Wedding,Mitte,52.55391999999999,13.37877,Apartment,Private room,2,1.0,1.0,1.0,
 t,Prenzlauer Berg,Pankow,52.54361999999999,13.407329999999998,Apartment,Entire home/apt,4,1.0,2.0,2.0,1,90,42,94.0,10.0,10.0,10.0,10.0,10.0,9.0,f,f,73.0
 f,Mitte,Mitte,52.51061,13.39321,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,3,7,96.0,10.0,9.0,10.0,10.0,10.0,10.0,f,f,35.0
 t,NeukÃ¶lln,NeukÃ¶lln,52.49029000000001,13.44215,Apartment,Private room,2,1.0,1.0,2.0,1,2,22,97.0,10.0,9.0,10.0,10.0,10.0,10.0,t,f,26.0
-t,Kreuzberg,Friedrichshain-Kreuzberg,52.49971,13.397670000000002,,Entire home/apt,16,,,,1,2,54,95.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,320.0
 f,Friedrichshain,Friedrichshain-Kreuzberg,52.50941,13.455579999999998,Apartment,Private room,2,1.0,1.0,1.0,1,5,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,36.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.46591999999999,13.42857,Apartment,Private room,2,1.0,1.0,1.0,1,1,12,98.0,10.0,9.0,9.0,9.0,9.0,8.0,t,f,40.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.48049,13.43984,Apartment,Private room,2,1.0,1.0,1.0,1,2,15,96.0,10.0,10.0,10.0,10.0,9.0,10.0,f,f,25.0
@@ -6888,7 +6879,6 @@ f,Friedrichshain,Friedrichshain-Kreuzberg,52.50685,13.453620000000004,Apartment,
 f,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.47953,13.34837,Apartment,Private room,2,1.5,1.0,1.0,1,1,142,96.0,10.0,10.0,10.0,9.0,9.0,9.0,f,f,49.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49631,13.43314,Apartment,Private room,1,1.0,1.0,1.0,1,7,7,80.0,7.0,7.0,7.0,7.0,10.0,8.0,t,f,30.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.48034000000001,13.379529999999995,Apartment,Private room,2,1.0,1.0,1.0,1,5,6,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,39.0
-f,Wedding,Mitte,52.54815,13.35399,House,Entire home/apt,6,1.0,,5.0,4,10,2,100.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,80.0
 f,Wedding,Mitte,52.55281,13.38206,Apartment,Private room,1,1.5,1.0,1.0,1,2,10,99.0,10.0,9.0,10.0,10.0,9.0,10.0,t,f,16.0
 t,Moabit,Mitte,52.52199000000001,13.33626,Apartment,Private room,2,1.0,1.0,1.0,1,1,19,97.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,36.0
 f,Friedrichsfelde,Lichtenberg,52.49426,13.50979,Apartment,Private room,2,1.0,1.0,1.0,1,1,19,98.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,30.0
@@ -7143,7 +7133,6 @@ f,Mitte,Mitte,52.53186,13.407179999999999,Apartment,Private room,2,1.0,1.0,1.0,1
 f,,Lichtenberg,52.4961,13.516570000000002,House,Private room,2,1.5,1.0,1.0,2,3,32,97.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,40.0
 t,Mahlsdorf,Marzahn - Hellersdorf,52.51988000000001,13.556470000000004,House,Private room,2,2.0,1.0,1.0,1,2,111,97.0,10.0,10.0,10.0,10.0,9.0,10.0,f,f,38.0
 t,Prenzlauer Berg,Pankow,52.53708000000001,13.42693,Apartment,Private room,6,1.0,1.0,6.0,4,2,291,97.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,55.0
-f,NiederschÃ¶nhausen,Pankow,52.57822,13.3974,,Entire home/apt,10,3.0,,7.0,1,2,28,92.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,200.0
 f,Prenzlauer Berg,Pankow,52.54461,13.42332,Apartment,Entire home/apt,3,1.0,1.0,3.0,2,2,4,90.0,10.0,9.0,10.0,10.0,9.0,10.0,t,f,33.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49655,13.42026,Apartment,Entire home/apt,4,1.5,0.0,2.0,3,3,1,100.0,10.0,8.0,10.0,10.0,10.0,10.0,f,f,125.0
 t,Prenzlauer Berg,Pankow,52.530919999999995,13.436379999999998,Apartment,Entire home/apt,2,1.0,1.0,1.0,2,3,31,97.0,10.0,10.0,10.0,10.0,9.0,10.0,f,f,79.0
@@ -7539,7 +7528,6 @@ f,Friedrichshain,Friedrichshain-Kreuzberg,52.524330000000006,13.437620000000004,
 f,Mitte,Mitte,52.52644,13.412370000000005,Apartment,Private room,2,1.0,1.0,1.0,1,1,2,100.0,9.0,9.0,10.0,10.0,9.0,10.0,t,f,33.0
 t,Kreuzberg,Friedrichshain-Kreuzberg,52.48513000000001,13.37579,Apartment,Entire home/apt,4,1.0,2.0,3.0,1,1,8,100.0,10.0,9.0,9.0,10.0,10.0,10.0,f,f,95.0
 f,Friedrichsfelde,Lichtenberg,52.52029,13.519620000000002,Apartment,Private room,2,1.0,1.0,1.0,1,14,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,30.0
-t,Kreuzberg,Friedrichshain-Kreuzberg,52.49807,13.431,Apartment,Entire home/apt,12,,,9.0,6,1,96,97.0,10.0,10.0,10.0,10.0,9.0,9.0,t,f,320.0
 f,Moabit,Mitte,52.52381999999999,13.34114,Apartment,Entire home/apt,5,1.5,2.0,4.0,1,2,9,100.0,10.0,9.0,10.0,10.0,10.0,10.0,f,f,100.0
 t,Charlottenburg,Charlottenburg-Wilm.,52.50795,13.30726,Apartment,Private room,2,1.0,1.0,1.0,1,5,6,98.0,9.0,9.0,10.0,10.0,9.0,9.0,f,f,41.0
 t,Kreuzberg,Friedrichshain-Kreuzberg,52.49108,13.42463,Apartment,Entire home/apt,3,1.0,1.0,2.0,2,1,63,97.0,10.0,10.0,10.0,10.0,10.0,9.0,f,f,110.0
@@ -8706,7 +8694,6 @@ f,Lichtenrade,Tempelhof - SchÃ¶neberg,52.41108,13.3743,Apartment,Private room,
 f,Mitte,Mitte,52.53164,13.40322,Apartment,Private room,2,1.0,1.0,1.0,1,2,9,97.0,10.0,9.0,10.0,10.0,10.0,10.0,f,f,69.0
 t,Wilmersdorf,Charlottenburg-Wilm.,52.48605,13.31922,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,1,2,100.0,10.0,10.0,10.0,10.0,10.0,9.0,f,f,38.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49742,13.43095,Apartment,Entire home/apt,4,1.0,1.0,2.0,2,2,15,92.0,10.0,9.0,10.0,10.0,10.0,9.0,t,f,100.0
-t,NeukÃ¶lln,NeukÃ¶lln,52.47319,13.427,Loft,Entire home/apt,16,1.0,,,8,1,161,98.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,510.0
 t,Wedding,Mitte,52.55664,13.37043,Apartment,Entire home/apt,6,2.0,2.0,3.0,1,2,96,96.0,10.0,10.0,10.0,10.0,9.0,9.0,t,f,100.0
 f,Lichtenberg,Lichtenberg,52.50774000000001,13.43909,Apartment,Private room,3,1.0,1.0,1.0,1,2,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,18.0
 f,Alt-Treptow,Treptow - KÃ¶penick,52.48849000000001,13.45113,Apartment,Entire home/apt,4,1.0,2.0,2.0,1,3,13,90.0,10.0,9.0,9.0,10.0,9.0,10.0,t,f,35.0
@@ -9349,7 +9336,6 @@ t,Charlottenburg,Charlottenburg-Wilm.,52.51979,13.309129999999998,Apartment,Priv
 f,Alt-Treptow,Treptow - KÃ¶penick,52.4887,13.45111,Apartment,Private room,2,1.0,1.0,1.0,1,2,5,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,60.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49005,13.3964,Apartment,Private room,2,1.0,1.0,1.0,1,1,5,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,45.0
 f,Wedding,Mitte,52.55348000000001,13.34065,Apartment,Private room,2,1.0,1.0,1.0,1,1,3,87.0,9.0,7.0,10.0,9.0,7.0,10.0,f,f,25.0
-f,Tegel,Reinickendorf,52.57294,13.27897,House,Private room,7,1.0,1.0,,1,1,31,94.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,49.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.49254000000001,13.4323,Apartment,Entire home/apt,3,1.0,1.0,1.0,1,2,7,100.0,10.0,10.0,9.0,10.0,9.0,10.0,f,f,50.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49426999999999,13.4194,Apartment,Entire home/apt,4,1.0,1.0,2.0,2,2,10,93.0,10.0,9.0,9.0,9.0,10.0,10.0,t,f,70.0
 f,Prenzlauer Berg,Pankow,52.53563000000001,13.42645,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,1,3,100.0,10.0,7.0,10.0,10.0,10.0,10.0,t,f,45.0
@@ -9426,7 +9412,6 @@ t,Mitte,Mitte,52.53556999999999,13.409020000000002,Apartment,Entire home/apt,6,1
 t,NiederschÃ¶nhausen,Pankow,52.586209999999994,13.393070000000002,Apartment,Private room,5,1.0,2.0,3.0,1,1,55,97.0,10.0,10.0,10.0,10.0,9.0,10.0,f,f,46.0
 f,PlÃ¤nterwald,Treptow - KÃ¶penick,52.48058,13.45811,Apartment,Private room,2,1.0,1.0,1.0,1,4,5,96.0,10.0,9.0,9.0,9.0,9.0,10.0,f,f,38.0
 f,Prenzlauer Berg,Pankow,52.5546,13.405729999999998,Apartment,Entire home/apt,7,1.0,2.0,3.0,1,2,21,89.0,9.0,7.0,10.0,10.0,9.0,9.0,f,f,99.0
-f,Kreuzberg,Friedrichshain-Kreuzberg,52.49983000000001,13.43147,Apartment,Entire home/apt,2,,1.0,1.0,1,8,7,93.0,10.0,8.0,10.0,10.0,10.0,10.0,f,f,50.0
 f,Friedrichshain,Friedrichshain-Kreuzberg,52.51139000000001,13.464970000000005,Townhouse,Private room,4,1.0,1.0,2.0,1,2,62,92.0,10.0,9.0,10.0,10.0,9.0,9.0,t,f,50.0
 f,Mitte,Mitte,52.51326,13.39473,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,7,2,100.0,10.0,8.0,10.0,10.0,10.0,9.0,f,f,69.0
 f,Westend,Charlottenburg-Wilm.,52.51774,13.26532,Apartment,Private room,2,1.0,1.0,1.0,1,2,5,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,40.0
@@ -9898,7 +9883,6 @@ f,Prenzlauer Berg,Pankow,52.54702,13.407,Apartment,Entire home/apt,3,1.0,1.0,1.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.48953000000001,13.37569,Apartment,Private room,2,1.0,1.0,1.0,1,5,7,90.0,9.0,7.0,10.0,9.0,9.0,9.0,t,f,36.0
 f,Friedrichshain,Friedrichshain-Kreuzberg,52.51869,13.46846,Apartment,Private room,2,1.0,1.0,1.0,1,5,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,41.0
 f,Prenzlauer Berg,Pankow,52.54771,13.41019,Apartment,Entire home/apt,2,1.0,0.0,1.0,2,1,4,100.0,10.0,9.0,10.0,10.0,10.0,10.0,t,f,63.0
-f,NeukÃ¶lln,NeukÃ¶lln,52.48193000000001,13.42945,Apartment,Entire home/apt,,3.0,4.0,,6,2,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,250.0
 t,Moabit,Mitte,52.53211999999999,13.32931,Apartment,Private room,2,1.0,1.0,1.0,1,2,23,99.0,10.0,9.0,10.0,10.0,10.0,10.0,t,f,50.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.4993,13.44205,Apartment,Entire home/apt,5,1.0,2.0,3.0,2,7,3,100.0,9.0,7.0,10.0,10.0,7.0,8.0,f,f,100.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.47021,13.42908,Apartment,Entire home/apt,2,1.0,1.0,1.0,2,1,1,100.0,10.0,10.0,10.0,10.0,8.0,10.0,f,f,25.0
@@ -10628,7 +10612,6 @@ f,Kreuzberg,Friedrichshain-Kreuzberg,52.49445,13.41625,Apartment,Entire home/apt
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49121999999999,13.41623,Apartment,Private room,2,1.0,1.0,2.0,1,5,1,80.0,8.0,6.0,10.0,8.0,8.0,10.0,f,f,40.0
 f,Pankow,Pankow,52.55437,13.41176,Apartment,Entire home/apt,9,1.0,3.0,5.0,2,3,105,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,149.0
 t,NeukÃ¶lln,NeukÃ¶lln,52.48236,13.45063,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,4,142,98.0,10.0,9.0,10.0,10.0,10.0,10.0,f,f,23.0
-t,Prenzlauer Berg,Pankow,52.5432,13.41766,Apartment,Entire home/apt,12,1.0,,10.0,,3,136,95.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,208.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.50461,13.41109,Apartment,Private room,2,0.5,1.0,1.0,1,1,55,93.0,9.0,9.0,9.0,9.0,10.0,9.0,f,f,22.0
 f,Prenzlauer Berg,Pankow,52.55053000000001,13.41381,Apartment,Entire home/apt,2,1.0,0.0,2.0,2,2,29,98.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,54.0
 f,Prenzlauer Berg,Pankow,52.54008,13.40231,Apartment,Private room,2,1.0,1.0,2.0,1,7,4,100.0,10.0,9.0,10.0,10.0,10.0,10.0,t,f,24.0
@@ -10911,7 +10894,6 @@ f,NeukÃ¶lln,NeukÃ¶lln,52.48812,13.4249,Apartment,Private room,2,1.0,1.0,1.0,
 f,NeukÃ¶lln,NeukÃ¶lln,52.47448000000001,13.4251,Apartment,Private room,2,1.0,1.0,1.0,1,2,3,95.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,30.0
 f,Mitte,Mitte,52.51169,13.41683,Apartment,Private room,2,1.0,1.0,1.0,1,2,3,97.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,55.0
 f,Friedrichshain,Friedrichshain-Kreuzberg,52.51185,13.47158,Apartment,Entire home/apt,3,1.0,1.0,2.0,2,14,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,128.0
-f,Tiergarten,Mitte,52.4985,13.360920000000002,Apartment,Entire home/apt,,2.0,4.0,,5,1,126,92.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,216.0
 t,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.49009000000001,13.36722,Apartment,Private room,1,1.0,1.0,1.0,1,2,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,38.0
 f,Mitte,Mitte,52.52911999999999,13.38971,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,5,23,100.0,10.0,10.0,9.0,10.0,10.0,10.0,t,f,60.0
 f,Tempelhof,Tempelhof - SchÃ¶neberg,52.47888,13.38836,Apartment,Entire home/apt,2,1.0,0.0,1.0,1,1,1,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,55.0
@@ -11857,7 +11839,6 @@ f,Moabit,Mitte,52.52730999999999,13.348779999999998,Apartment,Entire home/apt,2,
 f,Moabit,Mitte,52.52456999999999,13.34768,Apartment,Private room,2,2.0,1.0,2.0,1,2,12,98.0,10.0,10.0,10.0,10.0,10.0,9.0,t,f,30.0
 f,Wedding,Mitte,52.56581,13.387679999999998,Apartment,Private room,3,1.0,1.0,1.0,1,2,8,96.0,10.0,9.0,10.0,10.0,9.0,9.0,f,f,75.0
 t,Moabit,Mitte,52.5222,13.353970000000002,Apartment,Entire home/apt,3,2.0,2.0,2.0,1,3,38,96.0,10.0,9.0,10.0,10.0,10.0,9.0,t,f,220.0
-f,Friedrichshain,Friedrichshain-Kreuzberg,52.49231999999999,13.462829999999999,Apartment,Private room,1,,1.0,1.0,1,1,2,97.0,10.0,9.0,10.0,10.0,10.0,9.0,f,f,25.0
 t,Kreuzberg,Friedrichshain-Kreuzberg,52.49708,13.42885,Apartment,Private room,2,1.0,1.0,1.0,1,1,56,99.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,46.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.47807,13.45285,Apartment,Private room,1,1.0,1.0,1.0,1,2,3,95.0,10.0,10.0,10.0,10.0,9.0,9.0,f,f,20.0
 t,Wedding,Mitte,52.54696,13.35368,Apartment,Entire home/apt,6,2.0,2.0,4.0,4,3,14,100.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,199.0
@@ -12115,7 +12096,6 @@ f,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48099000000001,13.34475,Apartment,E
 f,Wedding,Mitte,52.54265,13.349070000000005,Apartment,Private room,2,1.0,1.0,2.0,1,1,8,69.0,7.0,7.0,9.0,7.0,8.0,7.0,f,f,25.0
 t,Mitte,Mitte,52.52949000000001,13.39271,Apartment,Private room,2,1.0,1.0,1.0,1,2,189,99.0,10.0,10.0,10.0,10.0,10.0,10.0,t,f,45.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.49768000000001,13.38699,Apartment,Private room,4,1.0,1.0,2.0,1,1,12,94.0,9.0,10.0,9.0,9.0,10.0,10.0,t,f,40.0
-f,Westend,Charlottenburg-Wilm.,52.50534,13.23988,House,Entire home/apt,4,2.0,,4.0,1,7,19,94.0,9.0,9.0,9.0,9.0,10.0,9.0,f,f,140.0
 f,Kreuzberg,Friedrichshain-Kreuzberg,52.498430000000006,13.43309,Apartment,Private room,1,1.0,1.0,1.0,1,3,1,80.0,8.0,10.0,10.0,10.0,10.0,8.0,f,f,28.0
 f,Wedding,Mitte,52.55148000000001,13.36629,Apartment,Entire home/apt,3,1.0,1.0,1.0,1,5,3,100.0,10.0,10.0,9.0,10.0,9.0,10.0,f,f,54.0
 f,Potsdamer Platz,Friedrichshain-Kreuzberg,52.51131,13.37641,Apartment,Entire home/apt,2,1.0,1.0,1.0,1,1,15,96.0,10.0,10.0,10.0,9.0,10.0,9.0,t,f,90.0
@@ -12392,7 +12372,6 @@ f,Prenzlauer Berg,Pankow,52.53441,13.40679,Apartment,Entire home/apt,4,1.5,2.0,2
 t,SchÃ¶neberg,Tempelhof - SchÃ¶neberg,52.48154,13.36891,Apartment,Private room,2,1.0,1.0,1.0,1,1,43,100.0,10.0,10.0,9.0,10.0,10.0,10.0,t,f,39.0
 f,NeukÃ¶lln,NeukÃ¶lln,52.4657,13.43529,Apartment,Private room,2,1.0,1.0,1.0,1,1,3,100.0,10.0,10.0,10.0,10.0,10.0,9.0,f,f,25.0
 t,Wilmersdorf,Charlottenburg-Wilm.,52.49745,13.31422,Apartment,Private room,2,1.0,1.0,1.0,1,2,331,97.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,55.0
-t,Kreuzberg,Friedrichshain-Kreuzberg,52.50213000000001,13.41105,Hostel,Private room,2,,1.0,1.0,1,2,28,94.0,10.0,9.0,10.0,10.0,10.0,9.0,t,f,197.0
 t,,Tempelhof - SchÃ¶neberg,52.45053000000001,13.32449,Bungalow,Private room,4,1.0,1.0,2.0,1,2,68,98.0,10.0,10.0,10.0,10.0,9.0,10.0,t,f,40.0
 f,Tegel,Reinickendorf,52.58951999999999,13.270929999999998,Apartment,Private room,2,1.0,1.0,1.0,1,3,2,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,40.0
 f,Friedrichshain,Friedrichshain-Kreuzberg,52.5179,13.4383,Apartment,Private room,2,1.0,1.0,2.0,1,4,3,100.0,10.0,10.0,10.0,10.0,10.0,10.0,f,f,50.0
