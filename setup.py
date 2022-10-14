@@ -12,7 +12,12 @@ def _read(fname: str) -> str:
     return data
 
 
-base_packages: List[str] = []
+base_packages: List[str] = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+]
 
 dev_packages = [
     "black",
