@@ -1,7 +1,7 @@
 def drop_useless(data):
     data = data.drop(
         [
-            "Listing Id",
+            "Listing ID",
             "Listing Name",
             "Host ID",
             "Host Name",
