@@ -3,7 +3,9 @@ from collections import OrderedDict
 import numpy as np
 import pandas as pd
 
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.decomposition import PCA
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
 def drop_useless(data):
@@ -22,7 +24,7 @@ def drop_useless(data):
             "City",
             "Postal Code",
             "Country Code",
-            "neighbourhood"
+            "neighbourhood",
         ],
     )
     return data
@@ -73,9 +75,22 @@ class CustomOneHotEncoder(OneHotEncoder):
         self.features_to_encode = list(X.select_dtypes(["object"]).columns)
         return super().fit(X[self.features_to_encode], y)
 
-    def transform(self, X):
+    def transform(self, X, y=None):
         one_hot_encoded = pd.DataFrame(
             super().transform(X[self.features_to_encode]).toarray(),
             columns=self.get_feature_names_out(),
         )
         return pd.concat([X.drop(columns=self.features_to_encode), one_hot_encoded], axis=1)
+
+    def fit_transform(self, X, y=None):
+        self.fit(X, y)
+        return self.transform(X, y)
+
+
+pipe = Pipeline(
+    [
+        ("one_hot", CustomOneHotEncoder()),
+        ("scaler", StandardScaler()),
+        ("pca", PCA(n_components=0.99)),
+    ]
+)
