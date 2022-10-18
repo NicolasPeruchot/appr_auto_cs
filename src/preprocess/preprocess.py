@@ -22,6 +22,7 @@ def drop_useless(data):
             "City",
             "Postal Code",
             "Country Code",
+            "neighbourhood"
         ],
     )
     return data
