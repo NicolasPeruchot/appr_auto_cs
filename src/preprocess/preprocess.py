@@ -25,6 +25,7 @@ def drop_useless(data):
             "Postal Code",
             "Country Code",
             "neighbourhood",
+            "Is Superhost"
         ],
     )
     return data
