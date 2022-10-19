@@ -4,68 +4,34 @@ import numpy as np
 import pandas as pd
 
 from sklearn.decomposition import PCA
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from utils import drop_useless, incomplete_columns
 
 
-def drop_useless(data):
-    """Drop useless features."""
-    data = data.drop(
-        columns=[
-            "Listing ID",
-            "Listing Name",
-            "Host ID",
-            "Host Name",
-            "Host Since",
-            "Is Exact Location",
-            "Country",
-            "First Review",
-            "Last Review",
-            "City",
-            "Postal Code",
-            "Country Code",
-            "neighbourhood",
-            "Is Superhost"
-        ],
+def preprocess(data):
+    """Clean the data"""
+    data = drop_useless(data)
+
+    data = data.replace("*", np.nan)
+
+    listfeatures = incomplete_columns(data, to_print=False)
+    data = data.drop(columns=[x for x in listfeatures.keys() if listfeatures[x]["pct"] > 45])
+
+    data["Property Type"] = np.where(
+        data["Property Type"].isna(), "Apartment", data["Property Type"]
     )
+
+    data = data.dropna(subset=["Price"]).reset_index(drop=True)
+
+    obj = set(data.select_dtypes(["object"]).columns)
+    na = set(data.columns[data.isna().any()].tolist())
+    data = data.astype({x: "float64" for x in obj.intersection(na)})
+    data.drop(columns=["Price"], inplace=True)
+
     return data
-
-
-def incomplete_columns(data):
-    """Names and informations about features with missing data."""
-    total = 0
-    list_features = {}
-    for col in data.columns:
-        miss = data[col].isnull()
-        pct = miss.mean() * 100
-        total += miss.sum()
-        if pct != 0:
-            list_features[col] = {"sum": miss.sum(), "pct": round(pct, 2)}
-
-    for x in OrderedDict(sorted(list_features.items(), key=lambda i: i[1]["pct"], reverse=True)):
-        print(f"{x} => {list_features[x]['sum']} [{list_features[x]['pct']}%]")
-
-    return list_features
-
-
-def min_miss_value_corr(data, listfeatures):
-    """Returns the minimum correlation for features with missing data."""
-    tablefeatures = np.ones((len(listfeatures), len(listfeatures)))
-    index1 = 0
-    for q in listfeatures:
-        q_nan = data[q].isna()
-        nanrows = sum(q_nan)
-        index2 = 0
-        for p in listfeatures:
-            p_nan = data[p].isna()
-            if q != p:
-                bothmiss = sum(q_nan & p_nan)
-                tablefeatures[index1, index2] = bothmiss / nanrows
-            index2 += 1
-        index1 += 1
-        min_corr_pct = round(tablefeatures.min() * 100, 2)
-
-    return min_corr_pct
 
 
 class CustomOneHotEncoder(OneHotEncoder):
@@ -73,10 +39,12 @@ class CustomOneHotEncoder(OneHotEncoder):
         super().__init__(categories=categories)
 
     def fit(self, X, y=None):
+        X = preprocess(X)
         self.features_to_encode = list(X.select_dtypes(["object"]).columns)
         return super().fit(X[self.features_to_encode], y)
 
     def transform(self, X, y=None):
+        X = preprocess(X)
         one_hot_encoded = pd.DataFrame(
             super().transform(X[self.features_to_encode]).toarray(),
             columns=self.get_feature_names_out(),
@@ -88,9 +56,21 @@ class CustomOneHotEncoder(OneHotEncoder):
         return self.transform(X, y)
 
 
-pipe = Pipeline(
+class CustomIterativeImputer(IterativeImputer):
+    def __init__(self, sample_posterior=True, random_state=0):
+        super().__init__(sample_posterior=sample_posterior, random_state=random_state)
+
+    def transform(self, X, y=None):
+        return pd.DataFrame(super().transform(X, y), columns=X.columns)
+
+    def fit_transform(self, X, y=None):
+        return pd.DataFrame(super().fit_transform(X, y), columns=X.columns)
+
+
+pipeline = Pipeline(
     [
         ("one_hot", CustomOneHotEncoder()),
+        ("iterative", CustomIterativeImputer()),
         ("scaler", StandardScaler()),
         ("pca", PCA(n_components=0.99)),
     ]
