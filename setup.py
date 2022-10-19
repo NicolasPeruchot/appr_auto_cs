@@ -12,7 +12,12 @@ def _read(fname: str) -> str:
     return data
 
 
-base_packages: List[str] = []
+base_packages: List[str] = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+]
 
 dev_packages = [
     "black",
@@ -22,19 +27,13 @@ dev_packages = [
 ]
 
 
-test_packages = [
-    "pytest",
-]
-
-
 setup(
     name="appr_auto_cs",
     version="0.0.1",
-    packages=find_packages(exclude=["notebooks", "tests"]),
+    packages=find_packages(),
     long_description=_read("README.md"),
     install_requires=base_packages,
     extras_require={
-        "dev": dev_packages + test_packages,
-        "test": test_packages,
+        "dev": dev_packages,
     },
 )
