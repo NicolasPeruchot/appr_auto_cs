@@ -17,6 +17,9 @@ base_packages: List[str] = [
     "pandas",
     "scikit-learn",
     "matplotlib",
+    "optuna",
+    "mlflow",
+    "xgboost",
 ]
 
 dev_packages = [

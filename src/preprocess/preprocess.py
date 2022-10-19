@@ -8,10 +8,11 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from utils import drop_useless, incomplete_columns
+
+from src.preprocess.utils import drop_useless, incomplete_columns
 
 
-def preprocess(data):
+def preprocess_x(data):
     """Clean the data"""
     data = drop_useless(data)
 
@@ -34,17 +35,25 @@ def preprocess(data):
     return data
 
 
+def preprocess_y(data):
+    """Clean the data"""
+
+    data = data.dropna(subset=["Price"]).reset_index(drop=True)
+
+    return data["Price"]
+
+
 class CustomOneHotEncoder(OneHotEncoder):
     def __init__(self, categories="auto"):
         super().__init__(categories=categories)
 
     def fit(self, X, y=None):
-        X = preprocess(X)
+        X = preprocess_x(X)
         self.features_to_encode = list(X.select_dtypes(["object"]).columns)
         return super().fit(X[self.features_to_encode], y)
 
     def transform(self, X, y=None):
-        X = preprocess(X)
+        X = preprocess_x(X)
         one_hot_encoded = pd.DataFrame(
             super().transform(X[self.features_to_encode]).toarray(),
             columns=self.get_feature_names_out(),
@@ -72,6 +81,6 @@ pipeline = Pipeline(
         ("one_hot", CustomOneHotEncoder()),
         ("iterative", CustomIterativeImputer()),
         ("scaler", StandardScaler()),
-        ("pca", PCA(n_components=0.99)),
+        ("pca", PCA(n_components=0.90)),
     ]
 )
