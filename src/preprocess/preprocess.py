@@ -25,22 +25,10 @@ def preprocess_x(data):
         data["Property Type"].isna(), "Apartment", data["Property Type"]
     )
 
-    data = data.dropna(subset=["Price"]).reset_index(drop=True)
-
     obj = set(data.select_dtypes(["object"]).columns)
     na = set(data.columns[data.isna().any()].tolist())
     data = data.astype({x: "float64" for x in obj.intersection(na)})
-    data.drop(columns=["Price"], inplace=True)
-
     return data
-
-
-def preprocess_y(data):
-    """Clean the data"""
-
-    data = data.dropna(subset=["Price"]).reset_index(drop=True)
-
-    return data["Price"]
 
 
 class CustomOneHotEncoder(OneHotEncoder):
@@ -58,7 +46,15 @@ class CustomOneHotEncoder(OneHotEncoder):
             super().transform(X[self.features_to_encode]).toarray(),
             columns=self.get_feature_names_out(),
         )
-        return pd.concat([X.drop(columns=self.features_to_encode), one_hot_encoded], axis=1)
+
+        return pd.concat(
+            [
+                X.drop(columns=self.features_to_encode).reset_index(drop=True),
+                one_hot_encoded.reset_index(drop=True),
+            ],
+            axis=1,
+            ignore_index=True,
+        )
 
     def fit_transform(self, X, y=None):
         self.fit(X, y)
@@ -79,8 +75,8 @@ class CustomIterativeImputer(IterativeImputer):
 pipeline = Pipeline(
     [
         ("one_hot", CustomOneHotEncoder()),
-        ("iterative", CustomIterativeImputer()),
+        ("iterative", IterativeImputer()),
         ("scaler", StandardScaler()),
-        ("pca", PCA(n_components=0.90)),
+        ("pca", PCA(n_components=0.80)),
     ]
 )

@@ -1,26 +1,39 @@
 import optuna
 import pandas as pd
-import sklearn.ensemble
 import sklearn.model_selection
 import sklearn.svm
 
-from optuna.integration.mlflow import MLflowCallback
-from sklearn import model_selection
-
 from models import models_list
-from src.preprocess.preprocess import pipeline, preprocess_x, preprocess_y
+from optuna.integration.mlflow import MLflowCallback
+from sklearn import metrics, model_selection
+from sklearn.model_selection import train_test_split
+
+from src.preprocess.preprocess import pipeline
 
 
 mlflc = MLflowCallback(metric_name="accuracy")
 
+data = pd.read_csv("../../data/train_airbnb_berlin.xls")
+data = data.dropna(subset=["Price"]).reset_index(drop=True)
+
+
+Y = data["Price"]
+X = data.drop(columns=["Price"])
+
+
+X_train, X_val, y_train, y_val = train_test_split(
+    X,
+    Y,
+    test_size=0.20,
+    random_state=42,
+)
+
+X_train = pipeline.fit_transform(X_train)
+X_val = pipeline.transform(X_val)
+
 
 @mlflc.track_in_mlflow()
 def objective(trial):
-
-    data_train = pd.read_csv("../../data/train_airbnb_berlin.xls")
-
-    Y = preprocess_y(data_train)
-    X = pd.read_csv("../../data/X_train.csv")
 
     classifier_name = trial.suggest_categorical("classifier", models_list.keys())
 
@@ -42,14 +55,29 @@ def objective(trial):
             )
 
     classifier_obj = models_list[classifier_name]["model"](**current_params)
-
-    score = model_selection.cross_val_score(classifier_obj, X, Y, scoring="r2", n_jobs=-1, cv=3)
+    score = model_selection.cross_val_score(
+        classifier_obj,
+        X_train,
+        y_train,
+        scoring="neg_mean_squared_error",
+        n_jobs=-1,
+        cv=5,
+        verbose=1,
+    )
     accuracy = score.mean()
     return accuracy
 
 
 study = optuna.create_study(study_name="my_study", direction="maximize")
-study.optimize(objective, n_trials=200, callbacks=[mlflc])
+study.optimize(objective, n_trials=20, callbacks=[mlflc])
 
 
 print(study.best_params)  # Show the best value.
+
+best = study.best_params
+model_name = best["classifier"]
+del best["classifier"]
+model = models_list[model_name]["model"](**best)
+model.fit(X_train, y_train)
+
+print(f"Score de validation: {metrics.mean_squared_error(model.predict(X_val),y_val)}")
