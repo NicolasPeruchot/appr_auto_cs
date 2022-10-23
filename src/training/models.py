@@ -30,6 +30,14 @@ models_list = {
             },
         ],
     },
+
+    # "BaggingRegressor": {
+    #     "model": ensemble.BaggingRegressor,
+    #     "hyperparam": [
+    #         # TODO
+    #     ],
+    # },
+
     "RandomForestRegressor": {
         "model": ensemble.RandomForestRegressor,
         "hyperparams": [
@@ -43,6 +51,21 @@ models_list = {
             },
         ],
     },
+
+    # "GradientBoostingRegression": {
+    #     "model": ensemble.GradientBoostingRegressor,
+    #     "hyperparam": [
+    #         # TODO
+    #     ],
+    # },
+
+    # "AdaBoostRegressor": {
+    #     "model": ensemble.AdaBoostRegressor,
+    #     "hyperparam": [
+    #         # TODO
+    #     ],
+    # },
+
     "XGBRegressor": {
         "model": XGBRegressor,
         "hyperparams": [
