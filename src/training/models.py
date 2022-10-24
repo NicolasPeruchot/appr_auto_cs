@@ -31,23 +31,45 @@ models_list = {
         ],
     },
 
-    # "BaggingRegressor": {
-    #     "model": ensemble.BaggingRegressor,
-    #     "hyperparam": [
-    #         # TODO
-    #     ],
-    # },
+    "BaggingRegressor": {
+        "model": ensemble.BaggingRegressor,
+        "hyperparam": [
+            {
+                "type": "int",
+                "optuna_params": {"name": "n_estimators", "low": 10, "high": 1000, "log": True, },
+            },
+            {
+                "type": "int",
+                "optuna_params": {"name": "max_samples", "low": 0.5, "high": 1, "log": True, },
+            },
+            {
+                "type": "int",
+                "optuna_params": {"name": "max_features", "low": 0.1, "high": 1, "log": True, },
+            },
+            {
+                "type": "categorical",
+                "optuna_params": {
+                    "name": "base_estimator",
+                    "cat": [
+                        "DecisionTreeRegressor",
+                        "SVR",
+                        "AdaBoostRegressor",
+                    ],
+                },
+            },
+        ],
+    },
 
     "RandomForestRegressor": {
         "model": ensemble.RandomForestRegressor,
         "hyperparams": [
             {
                 "type": "int",
-                "optuna_params": {"name": "n_estimators", "low": 10, "high": 10000, "log": True},
+                "optuna_params": {"name": "n_estimators", "low": 10, "high": 10000, "log": True, },
             },
             {
                 "type": "int",
-                "optuna_params": {"name": "max_depth", "low": 2, "high": 32, "log": True},
+                "optuna_params": {"name": "max_depth", "low": 2, "high": 32, "log": True, },
             },
         ],
     },
