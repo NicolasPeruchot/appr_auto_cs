@@ -3,9 +3,9 @@ from xgboost import XGBRegressor
 
 
 models_list = {
-    "DecisionTreeRegressor": {
+    "DecisionTreeRegressor": { 
         "model": tree.DecisionTreeRegressor,
-        "hyperparams": [
+        "hyperparams": [ #bonne idée d'inclure la profondeurmax dans les hyperparametres non ?
             {
                 "type": "categorical",
                 "optuna_params": {
@@ -81,12 +81,30 @@ models_list = {
     #     ],
     # },
 
-    # "AdaBoostRegressor": {
-    #     "model": ensemble.AdaBoostRegressor,
-    #     "hyperparam": [
-    #         # TODO
-    #     ],
-    # },
+    "AdaBoostRegressor": { #ajout d'un estimateur de base ?
+
+        "model": ensemble.AdaBoostRegressor,
+        "hyperparams": [
+            {
+                "type":"int",
+                "optuna_params":{"name":"n_estimators", "low":1, "high": 100, "log": True, },
+            },
+            {
+                "type":"float",
+                "optuna_params":{"name":"learning_rate", "low":0, "high": 10, "log": True, },
+            },
+            {
+                "type":"categorical",
+                "optuna_params":
+                {"name":"loss", 
+                "cat": [
+                        "linear",
+                        "square",
+                        "exponential",
+                    ]},
+            },
+         ],
+    },
 
     "XGBRegressor": {
         "model": XGBRegressor,
