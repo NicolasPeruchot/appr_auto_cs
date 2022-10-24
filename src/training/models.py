@@ -74,12 +74,33 @@ models_list = {
         ],
     },
 
-    # "GradientBoostingRegression": {
-    #     "model": ensemble.GradientBoostingRegressor,
-    #     "hyperparam": [
-    #         # TODO
-    #     ],
-    # },
+    "GradientBoostingRegression": {
+        "model": ensemble.GradientBoostingRegressor,
+        "hyperparams": [
+            {
+                "type":"categorical",
+                "optuna_params":{
+                    "name":"loss", 
+                    "cat": [
+                        "squared_error",
+                        "absolute_error",
+                        "huber",
+                        "quantile",
+                    ]
+                },
+            },
+            {
+                "type":"int",
+                "optuna_params":{"name":"n_estimators", "low":1, "high": 1000, "log": True, },
+            },
+            {
+                "type":"float",
+                "optuna_params":{"name":"learning_rate", "low":0, "high": 10, "log": True, },
+            },
+    
+            
+         ],
+    },
 
     "AdaBoostRegressor": { #ajout d'un estimateur de base ?
 
@@ -95,13 +116,14 @@ models_list = {
             },
             {
                 "type":"categorical",
-                "optuna_params":
-                {"name":"loss", 
-                "cat": [
+                "optuna_params":{
+                    "name":"loss",
+                    "cat": [
                         "linear",
                         "square",
                         "exponential",
-                    ]},
+                    ]
+                },
             },
          ],
     },
