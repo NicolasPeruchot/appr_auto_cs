@@ -36,9 +36,11 @@ X_val = pipeline.transform(X_val)
 def objective(trial):
 
     classifier_name = trial.suggest_categorical("classifier", models_list.keys())
+    print(classifier_name)
 
     current_params = {}
     for param in models_list[classifier_name]["hyperparams"]:
+        print(param)
         if param["type"] == "int":
             current_params[param["optuna_params"]["name"]] = trial.suggest_int(
                 **param["optuna_params"]
