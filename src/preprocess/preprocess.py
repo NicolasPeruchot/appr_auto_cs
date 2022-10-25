@@ -8,15 +8,12 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from utils import drop_missing_too_high, drop_missing_too_low, drop_useless, incomplete_columns
+from utils import drop_missing_too_high, drop_missing_too_low, drop_ratings, drop_useless
 
 
-# valeur à switcher dans notre main
-interrupteur_supprime_ratings = True
-
-
-def preprocess_x(data, interrupteur=interrupteur_supprime_ratings):
-    """Clean the data"""
+def preprocess_x(data, drop_all_ratings=True):
+    """Clean the data.
+    drop_all_ratings allows to choose if the ratings are kept."""
     data = drop_useless(data)
 
     data = data.replace("*", np.nan)
@@ -33,18 +30,8 @@ def preprocess_x(data, interrupteur=interrupteur_supprime_ratings):
     na = set(data.columns[data.isna().any()].tolist())
     data = data.astype({x: "float64" for x in obj.intersection(na)})
 
-    if interrupteur:
-        data = data.dropna(
-            subset=[
-                "Overall Rating",
-                "Accuracy Rating",
-                "Cleanliness Rating",
-                "Checkin Rating",
-                "Communication Rating",
-                "Location Rating",
-                "Value Rating",
-            ]
-        ).reset_index(drop=True)
+    if drop_all_ratings:
+        data = drop_ratings(data)
     return data
 
 

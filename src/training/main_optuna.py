@@ -1,12 +1,10 @@
 import optuna
 import pandas as pd
-import sklearn.model_selection
-import sklearn.svm
 
 from models import models_list
 from optuna.integration.mlflow import MLflowCallback
-from sklearn import metrics, model_selection
-from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import cross_val_score, train_test_split
 
 from src.preprocess.preprocess import pipeline
 
@@ -40,8 +38,7 @@ X_val = pipeline.transform(X_val)
 @mlflc.track_in_mlflow()
 def objective(trial):
 
-    classifier_name = trial.suggest_categorical(
-        "classifier", models_list.keys())
+    classifier_name = trial.suggest_categorical("classifier", models_list.keys())
     print(classifier_name)
 
     current_params = {}
@@ -63,7 +60,7 @@ def objective(trial):
             )
 
     classifier_obj = models_list[classifier_name]["model"](**current_params)
-    score = model_selection.cross_val_score(
+    score = cross_val_score(
         classifier_obj,
         X_train,
         y_train,
@@ -88,5 +85,4 @@ del best["classifier"]
 model = models_list[model_name]["model"](**best)
 model.fit(X_train, y_train)
 
-print(
-    f"Score de validation: {metrics.mean_squared_error(model.predict(X_val),y_val)}")
+print(f"Score de validation: {mean_squared_error(model.predict(X_val),y_val)}")
