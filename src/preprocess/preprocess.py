@@ -9,25 +9,33 @@ from sklearn.impute import IterativeImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-from src.preprocess.utils import drop_useless, incomplete_columns
+from utils import drop_useless, incomplete_columns, drop_missing_too_high, drop_missing_too_low
 
 
-def preprocess_x(data):
+# valeur à switcher dans notre main
+interrupteur_supprime_ratings = True
+
+
+def preprocess_x(data, interrupteur=interrupteur_supprime_ratings):
     """Clean the data"""
     data = drop_useless(data)
 
     data = data.replace("*", np.nan)
 
-    listfeatures = incomplete_columns(data, to_print=False)
-    data = data.drop(columns=[x for x in listfeatures.keys() if listfeatures[x]["pct"] > 45])
+    data = drop_missing_too_high(data)
 
     data["Property Type"] = np.where(
-        data["Property Type"].isna(), "Apartment", data["Property Type"]
-    )
+        data["Property Type"].isna(), "Apartment", data["Property Type"])
+
+    data = drop_missing_too_low(data)
 
     obj = set(data.select_dtypes(["object"]).columns)
     na = set(data.columns[data.isna().any()].tolist())
     data = data.astype({x: "float64" for x in obj.intersection(na)})
+
+    if interrupteur:
+        data = data.dropna(subset=['Overall Rating', 'Accuracy Rating', 'Cleanliness Rating',
+                                   'Checkin Rating', 'Communication Rating', 'Location Rating', 'Value Rating']).reset_index(drop=True)
     return data
 
 

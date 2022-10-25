@@ -28,6 +28,11 @@ X_train, X_val, y_train, y_val = train_test_split(
     random_state=42,
 )
 
+# valeur à switcher dans notre main
+# si interrupteur = True : on supprime toutes les lignes des ratings qui ont des NA
+# si interrupteur = False : on fait des regressions stochastiques sur ces lignes
+interrupteur_supprime_ratings = True
+
 X_train = pipeline.fit_transform(X_train)
 X_val = pipeline.transform(X_val)
 
@@ -35,7 +40,8 @@ X_val = pipeline.transform(X_val)
 @mlflc.track_in_mlflow()
 def objective(trial):
 
-    classifier_name = trial.suggest_categorical("classifier", models_list.keys())
+    classifier_name = trial.suggest_categorical(
+        "classifier", models_list.keys())
     print(classifier_name)
 
     current_params = {}
@@ -82,4 +88,5 @@ del best["classifier"]
 model = models_list[model_name]["model"](**best)
 model.fit(X_train, y_train)
 
-print(f"Score de validation: {metrics.mean_squared_error(model.predict(X_val),y_val)}")
+print(
+    f"Score de validation: {metrics.mean_squared_error(model.predict(X_val),y_val)}")
