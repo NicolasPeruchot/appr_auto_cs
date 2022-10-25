@@ -8,8 +8,7 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-
-from utils import drop_useless, incomplete_columns, drop_missing_too_high, drop_missing_too_low
+from utils import drop_missing_too_high, drop_missing_too_low, drop_useless, incomplete_columns
 
 
 # valeur à switcher dans notre main
@@ -25,7 +24,8 @@ def preprocess_x(data, interrupteur=interrupteur_supprime_ratings):
     data = drop_missing_too_high(data)
 
     data["Property Type"] = np.where(
-        data["Property Type"].isna(), "Apartment", data["Property Type"])
+        data["Property Type"].isna(), "Apartment", data["Property Type"]
+    )
 
     data = drop_missing_too_low(data)
 
@@ -34,8 +34,17 @@ def preprocess_x(data, interrupteur=interrupteur_supprime_ratings):
     data = data.astype({x: "float64" for x in obj.intersection(na)})
 
     if interrupteur:
-        data = data.dropna(subset=['Overall Rating', 'Accuracy Rating', 'Cleanliness Rating',
-                                   'Checkin Rating', 'Communication Rating', 'Location Rating', 'Value Rating']).reset_index(drop=True)
+        data = data.dropna(
+            subset=[
+                "Overall Rating",
+                "Accuracy Rating",
+                "Cleanliness Rating",
+                "Checkin Rating",
+                "Communication Rating",
+                "Location Rating",
+                "Value Rating",
+            ]
+        ).reset_index(drop=True)
     return data
 
 
@@ -67,17 +76,6 @@ class CustomOneHotEncoder(OneHotEncoder):
     def fit_transform(self, X, y=None):
         self.fit(X, y)
         return self.transform(X, y)
-
-
-class CustomIterativeImputer(IterativeImputer):
-    def __init__(self, sample_posterior=True, random_state=0):
-        super().__init__(sample_posterior=sample_posterior, random_state=random_state)
-
-    def transform(self, X, y=None):
-        return pd.DataFrame(super().transform(X, y), columns=X.columns)
-
-    def fit_transform(self, X, y=None):
-        return pd.DataFrame(super().fit_transform(X, y), columns=X.columns)
 
 
 pipeline = Pipeline(
