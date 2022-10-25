@@ -7,6 +7,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import cross_val_score, train_test_split
 
 from src.preprocess.preprocess import pipeline
+from src.preprocess.utils import drop_ratings
 
 
 mlflc = MLflowCallback(metric_name="accuracy")
@@ -14,8 +15,16 @@ mlflc = MLflowCallback(metric_name="accuracy")
 data = pd.read_csv("../../data/train_airbnb_berlin.xls")
 data = data.dropna(subset=["Price"]).reset_index(drop=True)
 
+# valeur à switcher dans notre main
+# si interrupteur = True : on supprime toutes les lignes des ratings qui ont des NA
+# si interrupteur = False : on fait des regressions stochastiques sur ces lignes
+drop_all_ratings = False
 
-Y = data["Price"]
+if drop_all_ratings:
+    Y = drop_ratings(data)["Price"]
+else:
+    Y = data["Price"]
+
 X = data.drop(columns=["Price"])
 
 
@@ -26,12 +35,12 @@ X_train, X_val, y_train, y_val = train_test_split(
     random_state=42,
 )
 
-# valeur à switcher dans notre main
-# si interrupteur = True : on supprime toutes les lignes des ratings qui ont des NA
-# si interrupteur = False : on fait des regressions stochastiques sur ces lignes
-interrupteur_supprime_ratings = True
 
-X_train = pipeline.fit_transform(X_train)
+X_train = pipeline.fit_transform(
+    X_train,
+    one_hot__drop_all_ratings=drop_all_ratings,
+)
+
 X_val = pipeline.transform(X_val)
 
 
