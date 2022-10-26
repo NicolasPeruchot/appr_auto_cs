@@ -7,6 +7,7 @@ from models import models_list
 from optuna.integration.mlflow import MLflowCallback
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.preprocessing import StandardScaler
 
 from src.preprocess.preprocess import pipeline, preprocess_data
 
@@ -27,7 +28,7 @@ n_trials = args["n_trials"]
 
 data = preprocess_data(data, drop_all_ratings=drop_all_ratings)
 
-Y = data["Price"]
+Y = data["Price"].values
 X = data.drop(columns=["Price"])
 
 
@@ -45,6 +46,11 @@ X_train = pipeline.fit_transform(
 )
 
 X_val = pipeline.transform(X_val)
+
+std = StandardScaler()
+
+y_train = std.fit_transform(y_train.reshape(-1, 1)).ravel()
+y_val = std.transform(y_val.reshape(-1, 1)).ravel()
 
 
 @mlflc.track_in_mlflow()
@@ -83,7 +89,7 @@ def objective(trial):
     return accuracy
 
 
-study = optuna.create_study(study_name="my_study", direction="maximize")
+study = optuna.create_study(study_name="study", direction="maximize")
 study.optimize(objective, n_trials=n_trials, callbacks=[mlflc])
 
 

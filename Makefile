@@ -4,4 +4,3 @@ develop:
 
 install:
 	pip install -e .
-	pre-commit install
