@@ -17,9 +17,10 @@ from src.preprocess.utils import (
 )
 
 
-def preprocess_x(data, drop_all_ratings=False):
+def preprocess_data(data, drop_all_ratings=False):
     """Clean the data.
     drop_all_ratings allows to choose if the ratings are kept."""
+    data = data.dropna(subset=["Price"]).reset_index(drop=True)
     data = drop_useless(data)
 
     data = data.replace("*", np.nan)
@@ -29,8 +30,7 @@ def preprocess_x(data, drop_all_ratings=False):
     data["Property Type"] = np.where(
         data["Property Type"].isna(), "Apartment", data["Property Type"]
     )
-
-    data = drop_missing_too_low(data)
+    data = drop_missing_too_low(data)  # BUG
 
     obj = set(data.select_dtypes(["object"]).columns)
     na = set(data.columns[data.isna().any()].tolist())
@@ -49,27 +49,35 @@ class CustomOneHotEncoder(OneHotEncoder):
     def fit(self, X, y=None, drop_all_ratings=None):
         if drop_all_ratings == None:
             drop_all_ratings = self.drop_all_ratings
-        X = preprocess_x(X, drop_all_ratings=drop_all_ratings)
-        self.features_to_encode = list(X.select_dtypes(["object"]).columns)
+        self.features_to_encode = [
+            "Neighborhood Group",
+            "Property Type",
+            "Room Type",
+            "Guests Included",
+            "Instant Bookable",
+            "Business Travel Ready",
+        ]
         return super().fit(X[self.features_to_encode], y)
 
     def transform(self, X, y=None, drop_all_ratings=None):
         if drop_all_ratings == None:
             drop_all_ratings = self.drop_all_ratings
-        X = preprocess_x(X, drop_all_ratings=drop_all_ratings)
         one_hot_encoded = pd.DataFrame(
             super().transform(X[self.features_to_encode]).toarray(),
             columns=self.get_feature_names_out(),
         )
+        X = X.drop(columns=self.features_to_encode).reset_index(drop=True)
+        one_hot_encoded = one_hot_encoded.reset_index(drop=True)
 
-        return pd.concat(
+        concat = pd.concat(
             [
-                X.drop(columns=self.features_to_encode).reset_index(drop=True),
-                one_hot_encoded.reset_index(drop=True),
+                X,
+                one_hot_encoded,
             ],
             axis=1,
-            ignore_index=True,
         )
+
+        return concat
 
     def fit_transform(self, X, y=None, drop_all_ratings=None):
         if drop_all_ratings == None:

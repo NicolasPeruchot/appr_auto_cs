@@ -1,3 +1,5 @@
+import argparse
+
 import optuna
 import pandas as pd
 
@@ -6,25 +8,26 @@ from optuna.integration.mlflow import MLflowCallback
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import cross_val_score, train_test_split
 
-from src.preprocess.preprocess import pipeline
-from src.preprocess.utils import drop_ratings
+from src.preprocess.preprocess import pipeline, preprocess_data
 
 
 mlflc = MLflowCallback(metric_name="accuracy")
 
 data = pd.read_csv("../../data/train_airbnb_berlin.xls")
-data = data.dropna(subset=["Price"]).reset_index(drop=True)
 
-# valeur à switcher dans notre main
-# si interrupteur = True : on supprime toutes les lignes des ratings qui ont des NA
-# si interrupteur = False : on fait des regressions stochastiques sur ces lignes
-drop_all_ratings = False
 
-if drop_all_ratings:
-    Y = drop_ratings(data)["Price"]
-else:
-    Y = data["Price"]
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--drop-all-ratings", required=True, type=bool)
+parser.add_argument("-n", "--n-trials", required=True, type=int)
+args = vars(parser.parse_args())
 
+drop_all_ratings = args["drop_all_ratings"]
+n_trials = args["n_trials"]
+
+
+data = preprocess_data(data, drop_all_ratings=drop_all_ratings)
+
+Y = data["Price"]
 X = data.drop(columns=["Price"])
 
 
@@ -46,13 +49,11 @@ X_val = pipeline.transform(X_val)
 
 @mlflc.track_in_mlflow()
 def objective(trial):
-
+    trial.suggest_categorical("drop_all_ratings", [drop_all_ratings])
     classifier_name = trial.suggest_categorical("classifier", models_list.keys())
-    print(classifier_name)
 
     current_params = {}
     for param in models_list[classifier_name]["hyperparams"]:
-        print(param)
         if param["type"] == "int":
             current_params[param["optuna_params"]["name"]] = trial.suggest_int(
                 **param["optuna_params"]
@@ -83,7 +84,7 @@ def objective(trial):
 
 
 study = optuna.create_study(study_name="my_study", direction="maximize")
-study.optimize(objective, n_trials=20, callbacks=[mlflc])
+study.optimize(objective, n_trials=n_trials, callbacks=[mlflc])
 
 
 print(study.best_params)  # Show the best value.
@@ -91,6 +92,7 @@ print(study.best_params)  # Show the best value.
 best = study.best_params
 model_name = best["classifier"]
 del best["classifier"]
+del best["drop_all_ratings"]
 model = models_list[model_name]["model"](**best)
 model.fit(X_train, y_train)
 
