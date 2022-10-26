@@ -1,11 +1,25 @@
 from sklearn import ensemble, tree
+from sklearn.neighbors import KNeighborsRegressor
 from xgboost import XGBRegressor
 
 
 models_list = {
+    "KNN": {
+        "model": KNeighborsRegressor,
+        "hyperparams": [
+            {
+                "type": "int",
+                "optuna_params": {
+                    "name": "n_neighbors",
+                    "low": 2,
+                    "high": 200,
+                },
+            },
+        ],
+    },
     "DecisionTreeRegressor": {
         "model": tree.DecisionTreeRegressor,
-        "hyperparams": [  # bonne idée d'inclure la profondeurmax dans les hyperparametres non ?
+        "hyperparams": [
             {
                 "type": "categorical",
                 "optuna_params": {
@@ -14,7 +28,6 @@ models_list = {
                         "squared_error",
                         "friedman_mse",
                         "absolute_error",
-                        "poisson",
                     ],
                 },
             },
@@ -38,17 +51,25 @@ models_list = {
                 "optuna_params": {
                     "name": "n_estimators",
                     "low": 10,
-                    "high": 100,
+                    "high": 500,
                 },
             },
-            # {
-            #     "type": "int",
-            #     "optuna_params": {
-            #         "name": "max_features",
-            #         "low": 1,
-            #         "high": 40,
-            #     },
-            # },
+            {
+                "type": "int",
+                "optuna_params": {
+                    "name": "max_samples",
+                    "low": 1,
+                    "high": 10,
+                },
+            },
+            {
+                "type": "float",
+                "optuna_params": {
+                    "name": "max_features",
+                    "low": 0.1,
+                    "high": 1,
+                },
+            },
         ],
     },
     "RandomForestRegressor": {
@@ -59,7 +80,7 @@ models_list = {
                 "optuna_params": {
                     "name": "n_estimators",
                     "low": 10,
-                    "high": 100,
+                    "high": 500,
                 },
             },
             {
@@ -75,24 +96,12 @@ models_list = {
     "GradientBoostingRegression": {
         "model": ensemble.GradientBoostingRegressor,
         "hyperparams": [
-            # {
-            #     "type": "categorical",
-            #     "optuna_params": {
-            #         "name": "loss",
-            #         "cat": [
-            #             "squared_error",
-            #             "absolute_error",
-            #             "huber",
-            #             "quantile",
-            #         ],
-            #     },
-            # },
             {
                 "type": "int",
                 "optuna_params": {
                     "name": "n_estimators",
                     "low": 1,
-                    "high": 100,
+                    "high": 500,
                 },
             },
             {
@@ -108,14 +117,14 @@ models_list = {
     "AdaBoostRegressor": {
         "model": ensemble.AdaBoostRegressor,
         "hyperparams": [
-            # {
-            #     "type": "int",
-            #     "optuna_params": {
-            #         "name": "n_estimators",
-            #         "low": 1,
-            #         "high": 100,
-            #     },
-            # },
+            {
+                "type": "int",
+                "optuna_params": {
+                    "name": "n_estimators",
+                    "low": 1,
+                    "high": 500,
+                },
+            },
             {
                 "type": "float",
                 "optuna_params": {
@@ -145,7 +154,7 @@ models_list = {
                 "optuna_params": {
                     "name": "n_estimators",
                     "low": 10,
-                    "high": 100,
+                    "high": 500,
                 },
             },
             {

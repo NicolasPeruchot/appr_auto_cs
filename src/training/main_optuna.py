@@ -47,11 +47,6 @@ X_train = pipeline.fit_transform(
 
 X_val = pipeline.transform(X_val)
 
-std = StandardScaler()
-
-y_train = std.fit_transform(y_train.reshape(-1, 1)).ravel()
-y_val = std.transform(y_val.reshape(-1, 1)).ravel()
-
 
 @mlflc.track_in_mlflow()
 def objective(trial):
