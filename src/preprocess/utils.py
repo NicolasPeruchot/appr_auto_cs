@@ -26,8 +26,51 @@ def drop_useless(data):
     return data
 
 
+def drop_missing_too_low(data):
+    """Drop rows for fetaures with low missing rates."""
+    data = data.dropna(
+        subset=[
+            "Accomodates",
+            "Bathrooms",
+            "Bedrooms",
+            "Beds",
+            "Guests Included",
+            "Min Nights",
+        ]
+    )
+    return data
+
+
+def drop_missing_too_high(data):
+    """Drop features with high missing rates."""
+    data = data.drop(
+        columns=[
+            "Host Response Time",
+            "Host Response Rate",
+            "Square Feet",
+        ],
+    )
+    return data
+
+
+def drop_ratings(data):
+    """Drop ratings"""
+    data = data.dropna(
+        subset=[
+            "Overall Rating",
+            "Accuracy Rating",
+            "Cleanliness Rating",
+            "Checkin Rating",
+            "Communication Rating",
+            "Location Rating",
+            "Value Rating",
+        ]
+    ).reset_index(drop=True)
+    return data
+
+
 def incomplete_columns(data, to_print):
-    """Names and informations about features with missing data."""
+    """Names and informations about features with missing data. Used during the data exploration."""
     total = 0
     list_features = {}
     for col in data.columns:
