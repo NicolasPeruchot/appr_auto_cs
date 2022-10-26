@@ -14,7 +14,6 @@ models_list = {
                         "squared_error",
                         "friedman_mse",
                         "absolute_error",
-                        "poisson",
                     ],
                 },
             },
@@ -41,14 +40,14 @@ models_list = {
                     "high": 100,
                 },
             },
-            # {
-            #     "type": "int",
-            #     "optuna_params": {
-            #         "name": "max_features",
-            #         "low": 1,
-            #         "high": 40,
-            #     },
-            # },
+            {
+                "type": "float",
+                "optuna_params": {
+                    "name": "max_features",
+                    "low": 0.1,
+                    "high": 1,
+                },
+            },
         ],
     },
     "RandomForestRegressor": {
@@ -75,18 +74,6 @@ models_list = {
     "GradientBoostingRegression": {
         "model": ensemble.GradientBoostingRegressor,
         "hyperparams": [
-            # {
-            #     "type": "categorical",
-            #     "optuna_params": {
-            #         "name": "loss",
-            #         "cat": [
-            #             "squared_error",
-            #             "absolute_error",
-            #             "huber",
-            #             "quantile",
-            #         ],
-            #     },
-            # },
             {
                 "type": "int",
                 "optuna_params": {

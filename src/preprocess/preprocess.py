@@ -28,7 +28,7 @@ def preprocess_data(data, drop_all_ratings=False):
     data["Property Type"] = np.where(
         data["Property Type"].isna(), "Apartment", data["Property Type"]
     )
-    data = drop_missing_too_low(data)  # BUG
+    data = drop_missing_too_low(data)
 
     obj = set(data.select_dtypes(["object"]).columns)
     na = set(data.columns[data.isna().any()].tolist())
