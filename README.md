@@ -22,9 +22,9 @@
 To launch a training:
 
     cd src/training
-    python main_optuna.py -d True -n 5
+    python main_optuna.py -n 5
 
-```-d``` allows to drop certain features and ```-n``` is the number of trials.
+```-n``` is the number of trials. It is possible to use the flag ```--drop``` to drop certain features.
 
 ## MLFlow dashboard
 

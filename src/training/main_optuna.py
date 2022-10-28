@@ -7,7 +7,6 @@ from models import models_list
 from optuna.integration.mlflow import MLflowCallback
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import cross_val_score, train_test_split
-from sklearn.preprocessing import StandardScaler
 
 from src.preprocess.preprocess import pipeline, preprocess_data
 
@@ -18,13 +17,12 @@ data = pd.read_csv("../../data/train_airbnb_berlin.xls")
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-d", "--drop-all-ratings", required=True, type=bool)
+parser.add_argument("--drop", default=False, action=argparse.BooleanOptionalAction)
 parser.add_argument("-n", "--n-trials", required=True, type=int)
 args = vars(parser.parse_args())
 
-drop_all_ratings = args["drop_all_ratings"]
+drop_all_ratings = args["drop"]
 n_trials = args["n_trials"]
-
 
 data = preprocess_data(data, drop_all_ratings=drop_all_ratings)
 
